@@ -8,8 +8,4 @@
         <button><a href=""><h2>Contact</h2></a></button>
 <?php $this->stop()?>
 
-
-
-
-
-
+<h1>over ons</h1>

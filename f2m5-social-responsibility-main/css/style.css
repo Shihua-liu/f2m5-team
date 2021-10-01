@@ -1,88 +1,133 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
 
-body {
-    font-family: "Nunito", "Open Sans", Arial, Helvetica, sans-serif;
-    background: rgba(20, 58, 135, 0.8);
+@font-face {
+    font-family: "DNpro";
+    src: url(../font/DN\ PRO\ DN\ PRO\ MEDIUM.OTF);
 }
 
-main {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 20px;
-    background: #fff;
+
+
+/* header met login buttons en logo */
+
+body{
+    font-family: 'Noto Sans Display', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: auto;
+    background-color: #FE9060;
 }
 
 header {
-    padding: 20px;
-    background: rgba(0, 13, 39);
-    color: #fff;
+    
+    width: 100%;
+    background-color: white;    
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+}
+body > header > div > button{
+    font-family: DNpro;
+    margin: 15px;
+    padding: 12px 50px;
+    background: #0089FA;
+    color: white;
+    border:  solid #0067BB;
+    border-radius: 8px ;    
 }
 
-header h1 {
-    margin-bottom: 0;
+
+.logo{
+    width: 300px;
+    height: auto;
 }
 
-nav {
-    padding: 20px;
-    background: rgb(162, 184, 232);
-    color: #fff;
+button:hover {
+    background: #4F32F6;
+    
 }
 
-.content {
-    background: #ffffff;
-    min-height: 100px;
-    padding: 20px;
+
+
+/* hier is de slide show met de menu */
+
+.section1{
+    /* background: #FE9060; */
+    background: linear-gradient(to left, #FE9060 10%, #D94708 90%);
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 37% 38% 25% ;
+    grid-template-areas: "slogun foto menu";
 }
 
-nav ul {
+.slogun{
+    
+    grid-area: slogun;
+    height: 40vh;
+    margin: 30px;
+    color: white;
+    text-align: center;
+    
+    
+}
+
+.slogun > h1 {
     margin: 0;
-    padding: 0;
-    list-style: none;
-
 }
 
-nav ul li {
-    display: block;
+#trans{
+    width: 100%;
+    
+    text-decoration: underline red;
 }
 
-nav ul li a {
-    display: block;
-    padding: 5px 10px;
-    background: #000;
-    color: #fff;
+@keyframes example {
+
+    from {background-color: red;}
+  ppto {background-color: blue;}
+  }
+
+
+.slogun > h1{
+    font-size: 70px;
+}
+
+.slogun > h4{
+    font-size: 26px;
+}
+
+.fotoslider{
+    background: gray;
+    grid-area: foto;
+    height: 40vh;
+    margin: 30px;
+}
+
+.menu{
+    background: #4F32F6;
+    grid-area: menu;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 40vh;
+    margin: 30px;
+}
+.menu > button{
+    background: none;
+    border: none;
+    
+}
+
+.menu > button > a > h2{
     text-decoration: none;
+    color: white;
+    text-decoration: underline;
+    margin: 30px; 
 }
 
-nav ul li .active, nav ul li a:hover {
-    color: #000;
-    background: #fff
+.menu > button > a > h2:hover{
+    color: gray;
 }
 
-
-aside {
-    background: rgb(162, 184, 232);
-    min-height: 100px;
-    padding: 20px;
-}
-
-.top-10 ol {
-    margin: 0;
-    padding: 0 20px;
-}
-
-footer {
-    padding: 20px;
-    color: #fff;
-    background: rgba(0, 13, 39);
-}
-
-@media screen and (min-width: 900px) {
-    main {
-        grid-template-columns: 1fr 350px;
-    }
-
-    nav ul li a {
-        display: inline-block;
-    }
-
+.section2{
+    background-color: black;
 }
