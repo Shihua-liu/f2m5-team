@@ -1,10 +1,16 @@
-
 @font-face {
     font-family: "DNpro";
     src: url(../font/DN\ PRO\ DN\ PRO\ MEDIUM.OTF);
 }
 
-
+h1{
+    padding: 0; 
+    margin: 0;
+}
+h3{
+    padding: 0; 
+    margin: 0;
+}
 
 /* header met login buttons en logo */
 
@@ -12,122 +18,474 @@ body{
     font-family: 'Noto Sans Display', sans-serif;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
     height: auto;
-    background-color: #FE9060;
+    background: white;
+    /* background: linear-gradient(to left, #D94708,#FE9060 , #D94708 ); */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-header {
-    
+
+
+.header{
+    background-color: #ffffff;
+    color: #ffffff;
+    box-shadow: 0px 2px 9px 1px rgba(0,0,0,0.52);
+    position: relative;
     width: 100%;
-    background-color: white;    
-    display: flex;
-    justify-content: space-between;
-    z-index: 1;
+    z-index: 3;
 }
-body > header > div > button{
+
+.header ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.header ul a{
+    display: block;
+    padding: 10px;
+    border-left: 1px solid #aaa;
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+}
+
+.header ul a:hover{
+    background-color: #696969;
+}
+
+.header ul a:active{
+    background-color: #696969;
+}
+
+.login{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: linear-gradient(blue, rgb(76, 6, 156));
+}
+
+
+body > div > button{
     font-family: DNpro;
     margin: 15px;
     padding: 12px 50px;
     background: #0089FA;
     color: white;
-    border:  solid #0067BB;
-    border-radius: 8px ;    
+    border-left:  solid #055ba1 ;
+    border-top:  solid #0e79d1 ;
+    border-right:  solid #0536a1 ;
+    border-bottom:  solid #03188d ;
+    border-radius: 10px;  
+    letter-spacing: 1px;
+    text-transform: uppercase;  
 }
 
 
+body >div > a > button{
+    font-family: DNpro;
+    margin: 15px;
+    padding: 12px 50px;
+    background: #0089FA;
+    color: white;
+    border-left:  solid #055ba1 ;
+    border-top:  solid #0e79d1 ;
+    border-right:  solid #0536a1 ;
+    border-bottom:  solid #03188d ;
+    border-radius: 10px;  
+    letter-spacing: 1px;
+    text-transform: uppercase; 
+}
+
 .logo{
-    width: 300px;
+    width: 200px;
     height: auto;
 }
 
 button:hover {
-    background: #4F32F6;
-    
+    background: rgb(12, 87, 185);
+    border-left:  solid #045292 ;
+    border-top:  solid #0d6dbb ;
+    border-right:  solid #053292 ;
+    border-bottom:  solid #04167a ;
+    cursor: pointer;
 }
 
 
 
-/* hier is de slide show met de menu */
+/* slogun naast de fotoslider */
 
 .section1{
-    /* background: #FE9060; */
-    background: linear-gradient(to left, #FE9060 10%, #D94708 90%);
-    height: 100vh;
+    background: white;
+    /* background: linear-gradient(to left,#D94708, #FE9060, #D94708); */
+    height: 80vh;
     display: grid;
     grid-template-columns: 37% 38% 25% ;
-    grid-template-areas: "slogun foto menu";
+    grid-template-areas: "slogun foto";
 }
 
 .slogun{
-    
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
     grid-area: slogun;
     height: 40vh;
-    margin: 30px;
-    color: white;
+    margin: auto;
+    color: black;
     text-align: center;
     
-    
 }
 
-.slogun > h1 {
-    margin: 0;
+#trans {
+    display: inline-block;
+    position: relative;
+    color: black;
 }
-
-#trans{
+  
+#trans:after {
+    content: '';
+    position: absolute;
     width: 100%;
-    
-    text-decoration: underline red;
+    transform: scaleX(0);
+    height: 10px;
+    bottom: 0;
+    left: 0;
+    background-color: red;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
 }
-
-@keyframes example {
-
-    from {background-color: red;}
-  ppto {background-color: blue;}
-  }
-
+  
+#trans:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
 
 .slogun > h1{
     font-size: 70px;
+    border: solid;
 }
 
 .slogun > h4{
     font-size: 26px;
 }
 
-.fotoslider{
-    background: gray;
-    grid-area: foto;
-    height: 40vh;
-    margin: 30px;
-}
-
-.menu{
-    background: #4F32F6;
-    grid-area: menu;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 40vh;
-    margin: 30px;
-}
-.menu > button{
-    background: none;
-    border: none;
+.lid{
+    color: black;
+    text-decoration: none;
+    padding: 10px 50px;
+    background: radial-gradient(rgb(255, 136, 0), orange);
+    border-radius: 5px;
     
 }
 
-.menu > button > a > h2{
-    text-decoration: none;
-    color: white;
-    text-decoration: underline;
-    margin: 30px; 
+.fotoslider{
+    background: gray;
+    grid-area: foto;
+    margin: 30px;
 }
 
-.menu > button > a > h2:hover{
-    color: gray;
+.autofill{
+    width: 600px;
+    height: auto;
 }
+.fill{
+    max-width: 100%;
+    max-height: 100%;
+}
+
 
 .section2{
     background-color: black;
+}
+
+/* over iris */
+.iris{
+    display: grid;
+    grid-template-columns: 3vw;
+    grid-template-rows: 1vw;
+    margin: 40px;
+    grid-template-areas: 
+    "img img img tl tl tl tl"
+    "img img img sb sb sb sb"
+    "img img img ai ai ai ai"
+    "op op op ai ai ai ai"
+    "op op op ai ai ai ai";
+    
+}
+
+.titel{
+    grid-area: tl;
+    text-align: center;
+    margin: 20px
+}
+
+.sub-titel{
+    grid-area: sb;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.oprichter{
+    grid-area: op;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.about-iris{
+    grid-area: ai;
+    text-align: center;
+    margin: 40px;
+    word-wrap: break-word;      /* IE 5.5-7 */
+    white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
+    white-space: pre-wrap;      /* current browsers */
+}
+
+.iris > img{
+    grid-area: img;
+    margin: auto;
+    border: #000000 3px solid;
+}
+
+/* footer, slogun van footer, icons van socialmedia*/
+.footer{
+    background: blue;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: auto;
+}
+.slogun-footer{
+    padding: 0; margin: 0;
+}
+
+.slogun-footer > h1::first-letter{
+    color: #D94708;
+    
+}
+.slogun-footer > h3::first-letter{
+    color: #D94708;
+}
+
+.social > h2::first-letter{
+    color: #D94708;
+}
+
+.footer-menu > li > a > .current{
+    color: #D94708;
+}
+
+
+.footer > .social > img{
+    width: 22%;
+    height: auto;
+}
+
+.footer-menu{
+    list-style: none;
+}
+
+.footer-menu  > li > a{
+    color: white;
+    text-decoration: none;
+}
+
+.footer-menu > li > a:hover{
+    color: #D94708;
+}
+
+.social > h2{
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+/* Menu voor mobiel*/
+.menu{
+    font-family: DNpro;
+}
+
+.header .menu{
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+.header .menu-icon{
+    padding: 28px 20px;
+    position: relative;
+    float: right;
+    cursor: pointer;
+}
+
+.header .menu-icon .nav-icon{
+    background: #333;
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+    transition:background .2s ease-out;
+}
+
+.header .menu-icon .nav-icon:before{
+    background:#333;
+    content:"";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: 5px;
+}
+
+.header .menu-icon .nav-icon:after{
+    background:#333;
+    content:"";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: -5px;
+}
+
+.header .menu-btn{
+    display: none;
+}
+
+.header .menu-btn:checked ~ .menu{
+    max-height: 600px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon{
+    background: transparent;
+    color: white;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:before{ 
+    transform: rotate(-45deg);
+    top:0;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:after{
+    transform: rotate(45deg);
+    top:0;
+}
+
+.header ul a {
+    border-left: 0px solid;
+}
+
+i{
+    width: 100px;
+    height: 100px;
+}
+
+
+/* Menu voor desktop */
+
+@media (min-width:1000px){
+    .logo{
+        width: 400px;
+        height: auto;
+    }
+
+    .header li{
+        float:left;
+    }
+    .header li a{
+        padding: 10px 10px;
+    }
+    .header .menu{
+        clear: none;
+        float:right;
+        max-height: none;
+    }
+    .header .menu-icon{
+        display: none;
+    }
+    
+}
+
+@media (max-width:1000px ){
+    .section1{
+        display: flex;
+        flex-direction:column ;
+        height: 100vh;
+    }
+
+    .slogun{
+        margin-top: 40px;
+    }
+
+    .slogun > h1{
+        font-size: 50px;
+    }
+
+    .slogun > h4{
+        margin-bottom: 0px;
+    }
+
+    
+    .iris{
+        display: grid;
+        margin: 10px;
+        grid-template-areas: 
+        "tl tl tl"
+        "tl tl tl"
+        "tl tl tl"
+        "img img img"
+        "op op op"
+        "sb sb sb"
+        "ai ai ai";      
+    }
+
+    .iris > p{
+        text-align: left;
+        white-space: normal;
+    }
+}
+
+@media (max-width:349px){
+    .login{
+        flex-direction: column;
+    }
+
+    .slogun{
+        margin-top: 40px;
+    }
+
+    .slogun > h1{
+        font-size: 40px;
+    }
+
+    .slogun > h4{
+        margin-bottom: 0px;
+    }
+
+    .iris{
+        display: grid;
+        margin: 5px;
+        grid-template-areas: 
+        "tl tl tl"
+        "tl tl tl"
+        "tl tl tl"
+        "img img img"
+        "op op op"
+        "sb sb sb"
+        "ai ai ai";      
+    }
+
+    .iris > p{
+        text-align: left;
+        white-space: normal;
+    }
 }
