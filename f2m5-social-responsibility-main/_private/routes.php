@@ -15,7 +15,8 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	SimpleRouter::get( '/con', 'WebsiteController@contact' )->name( 'con' );
 	SimpleRouter::get( '/over', 'WebsiteController@over' )->name( 'over' );
 	SimpleRouter::get( '/trans', 'WebsiteController@trans' )->name( 'trans' );
-	SimpleRouter::get( '/aanmeld', 'WebsiteController@aanmeld' )->name( 'aanmeld' );
+	SimpleRouter::post( '/aanmeld', 'WebsiteController@aanmeld' )->name( 'aanmeld' );
+	SimpleRouter::get( '/aanmeld/prosses', 'RegistratieController@registerprocess' )->name( 'aanmeld.process' );
 
 
 

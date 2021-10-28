@@ -24,41 +24,59 @@
 <form action="" method="POST">
                 <div class="form-group">
                     <label for="voornaam">voornaam:</label>
-                    <input type="text" name="voornaam" value="" class="form-input" id="voornaam" required>
+                    <input type="text" name="voornaam" value="<?php echo input('voornaam')?>" class="form-input" id="voornaam" required>
+                    <?php if (isset($error['voornaam'])):?>
+                        <?php echo $error['voornaam']?>
+                    <?php endif;?>
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="achternaam">achternaam:</label>
-                    <input type="text" name="achternaam" value="" class="form-input" id="achternaam" required>
+                    <input type="text" name="achternaam" value="<?php echo input('achternaam')?>" class="form-input" id="achternaam" required>
+                    <?php if (isset($error['achternaam'])):?>
+                        <?php echo $error['achternaam']?>
+                    <?php endif;?>
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="username">gebruikersnaam:</label>
-                    <input type="text" name="gebruikersnaam" value="" class="form-input" id="gebruikersnaam" required>
+                    <input type="text" name="gebruikersnaam" value="<?php echo input('gebruikersnaam')?>" class="form-input" id="gebruikersnaam" required>
+                    <?php if (isset($error['gebruikersnaam'])):?>
+                        <?php echo $error['gebruikersnaam']?>
+                    <?php endif;?>
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="email">email:</label>
-                    <input type="email" name="email" value="" class="form-input" id="email" required>
+                    <input type="email" name="email" value="<?php echo input('email')?>" class="form-input" id="email" required>
+                    <?php if (isset($error['email'])):?>
+                        <?php echo $error['email']?>
+                    <?php endif;?>
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="wachtwoord">wachtwoord:</label>
-                    <input type="password" name="wachtwoord" value="" class="form-input" id="wachtwoord" required>
+                    <input type="password" name="wachtwoord" value="<?php echo input('wachtwoord')?>" class="form-input" id="wachtwoord" required>
+                    <?php if (isset($error['wachtwoord'])):?>
+                        <?php echo $error['wachtwoord']?>
+                    <?php endif;?>
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="gender">gender:</label>
                     <br>
                     <div>
-                        <input type="radio" name="gender" value="female" value="" class="form-input" id="gender">Vrouw
+                        <input type="radio" name="gender" value="female" value="<?php echo input('female')?>" class="form-input" id="gender">Vrouw
                     </div>
                     <div>
-                        <input type="radio" name="gender" value="male" value="" class="form-input" id="gender">Man
+                        <input type="radio" name="gender" value="male" value="<?php echo input('male')?>" class="form-input" id="gender">Man
                     </div>
                     <div>
-                        <input type="radio" name="gender" value="other" value="" class="form-input" id="gender">Zeg ik liever niet
+                        <input type="radio" name="gender" value="other" value="<?php echo input('niet-zeggen')?>" class="form-input" id="gender">Zeg ik liever niet
                     </div>
+                    <?php if (isset($error['gender'])):?>
+                        <?php echo $error['gender']?>
+                    <?php endif;?>
                 </div>
                 <br>
                 <button type="submit" class="btn submit-btn">registreer</button>
