@@ -16,7 +16,7 @@
 
 <!-- Dit zijn de login buttons -->
 <?php $this->start('logbutt')?>
-    <a href="php/aanmeld.php"><button>Aanmelden</button></a>
+    <a href="<?php echo url( 'aanmeld' ) ?>"<?php if ( current_route_is( 'home' ) ): ?> class="active"<?php endif ?>><button>Aanmelden</button></a>
     <button>Login</button>
 <?php $this->stop()?>
 

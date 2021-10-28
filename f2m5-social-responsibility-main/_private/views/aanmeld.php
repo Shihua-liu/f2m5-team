@@ -1,4 +1,5 @@
-<?php $this->layout('layouts::contact');?>
+<?php $this->layout('layouts::aanmeld'); ?>
+
 
 <?php $this->start('nav')?>
 <img class="logo" src="/foto/logo_small.png" alt=""><input class="menu-btn" type="checkbox" id="menu-btn" />
@@ -11,34 +12,59 @@
         </ul>
 <?php $this->stop()?>
 
+
 <?php $this->start('logbutt')?>
     <a href="<?php echo url( 'aanmeld' ) ?>"<?php if ( current_route_is( 'home' ) ): ?> class="active"<?php endif ?>><button>Aanmelden</button></a>
     <button>Login</button>
 <?php $this->stop()?>
 
 
-<?php $this->start( 'con-info' ) ?>
-<div class="tekst-vraag">
-            <h2>
-                Vragen? 
-                Samenwerken? 
-                Iets anders? 
-                Mail ons!
-            </h2>
+<?php $this->start('formulier') ?>
 
-            <h4>
-                heb jij een idee of een vraag voor de Transformer Community? 
-                Zou je graag willen samenwerken? 
-                Of ben je gewoon benieuwd wat wij zoal doen? 
+<form action="" method="POST">
+                <div class="form-group">
+                    <label for="voornaam">voornaam:</label>
+                    <input type="text" name="voornaam" value="" class="form-input" id="voornaam" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="achternaam">achternaam:</label>
+                    <input type="text" name="achternaam" value="" class="form-input" id="achternaam" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="username">gebruikersnaam:</label>
+                    <input type="text" name="gebruikersnaam" value="" class="form-input" id="gebruikersnaam" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="email">email:</label>
+                    <input type="email" name="email" value="" class="form-input" id="email" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="wachtwoord">wachtwoord:</label>
+                    <input type="password" name="wachtwoord" value="" class="form-input" id="wachtwoord" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="gender">gender:</label>
+                    <br>
+                    <div>
+                        <input type="radio" name="gender" value="female" value="" class="form-input" id="gender">Vrouw
+                    </div>
+                    <div>
+                        <input type="radio" name="gender" value="male" value="" class="form-input" id="gender">Man
+                    </div>
+                    <div>
+                        <input type="radio" name="gender" value="other" value="" class="form-input" id="gender">Zeg ik liever niet
+                    </div>
+                </div>
+                <br>
+                <button type="submit" class="btn submit-btn">registreer</button>
+            </form>
 
-                Neem gerust contact met ons op, dat vinden we leuk! 
-                Je kan je mail richten aan Iris, de oprichter.
-            </h4>
-        </div>
-
-        <button href="mailto:info@transformers.community" class="vraag-mail">Mail ons!</button>
 <?php $this->stop() ?>
-
 
 
 <?php $this->start('footer') ?>
