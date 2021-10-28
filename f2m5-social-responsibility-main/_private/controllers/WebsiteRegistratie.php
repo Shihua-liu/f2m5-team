@@ -12,7 +12,7 @@ use Error;
  * Geeft de gegevens aan de "view" laag (HTML template) om weer te geven
  *
  */
-class RegistratieController {
+class WebsiteRegistratie{
 
 
 	public function registerprocess() {
@@ -78,4 +78,5 @@ class RegistratieController {
 		$template_engine = get_template_engine();
 		echo $template_engine->render('aanmeld' , ['error' => $error]);
 	}
+
 }

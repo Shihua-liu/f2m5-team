@@ -21,7 +21,7 @@
 
 <?php $this->start('formulier') ?>
 
-<form action="" method="POST">
+<form action="<?php echo url("aanmeld.process")?>" method="POST">
                 <div class="form-group">
                     <label for="voornaam">voornaam:</label>
                     <input type="text" name="voornaam" value="<?php echo input('voornaam')?>" class="form-input" id="voornaam" required>
@@ -81,6 +81,7 @@
                 <br>
                 <button type="submit" class="btn submit-btn">registreer</button>
             </form>
+            
 
 <?php $this->stop() ?>
 
