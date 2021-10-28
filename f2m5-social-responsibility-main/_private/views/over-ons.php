@@ -16,8 +16,8 @@
 
 <!-- Dit zijn de login buttons -->
 <?php $this->start('logbutt')?>
-    <button>aanmelden</button>
-    <button>login</button>
+    <a href="php/aanmeld.php"><button>Aanmelden</button></a>
+    <button>Login</button>
 <?php $this->stop()?>
 
 
