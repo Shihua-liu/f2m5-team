@@ -671,6 +671,18 @@ form .submit-btn{
     height: auto;
 }
 
+.login-form{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    align-items: center;
+    height: 70vh;
+}
+
+.inlog-form > h3{
+    margin: 40px 0px;
+}
+
 
 
 /* Menu voor desktop */

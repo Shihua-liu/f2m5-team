@@ -19,7 +19,7 @@
 <body style="position: relative;
 height: 100%;">
     <header class="header">
-        <?php echo $this->section('nav'); ?>
+        <?php echo $this->fetch('nav'); ?>
     </header>
 
     <div class="login">
@@ -36,7 +36,7 @@ height: 100%;">
 
 
     <div class="footer">
-        <?php echo $this->section('footer'); ?>
+        <?php echo $this->fetch('footer'); ?>
     </div>
 </body>
 <script>

@@ -13,7 +13,7 @@
 
 <?php $this->start('logbutt')?>
     <a href="<?php echo url( 'aanmeld' ) ?>"<?php if ( current_route_is( 'home' ) ): ?> class="active"<?php endif ?>><button>Aanmelden</button></a>
-    <button>Login</button>
+        <a href="<?php echo url( 'login' ) ?>"<?php if ( current_route_is( 'home' ) ): ?> class="active"<?php endif ?>><button>inloggen</button></a>
 <?php $this->stop()?>
 
 
@@ -47,7 +47,7 @@
             <h3>Wij empoweren jongeren</h3><h3>om mentaal gezond te zijn</h3>
         </div>
         <div class="social">
-            <h2>Volg ons op
+            <h2>Volg ons op<h2>
             <a href="https://www.facebook.com/transformers.community" target="_new"><img src="/images/facebook.png" alt="" class=""></a>
             <a href="https://www.instagram.com/transformer.community/" target="_new"><img src="/images/instagram.png" alt="" class=""></a>
             <a href="https://www.linkedin.com/company/transformerscommunity" target="_new"><img src="/images/linkedin.png" alt="" class=""></a>
@@ -56,10 +56,10 @@
         </div>
         <div class="footer-navigatie">
             <ul class="footer-menu">
-                <li><a href="index.html"><h3 class="current">Home</h3></a></li>
-                <li><a href="html/over-ons.html"><h3>Over ons</h3></a></li>
-                <li><a href="html/word-transformer.html"><h3>Word Transformer!</h3></a></li>
-                <li><a href="html/contact.html"><h3>Contact</h3></a></li>
+            <li> <a href="<?php echo url( 'home' ) ?>"<?php if ( current_route_is( 'home' ) ): ?> class="active"<?php endif ?>><h3>Home</h3></a> </li>
+                <li> <a href="<?php echo url( 'con' ) ?>"<?php if ( current_route_is( 'home' ) ): ?> class="active"<?php endif ?>><h3 class="current">contact</h3></a> </li>
+                <li> <a href="<?php echo url( 'over' ) ?>"<?php if ( current_route_is( 'home' ) ): ?> class="active"<?php endif ?>><h3>Over-ons</h3></a> </li>
+                <li> <a href="<?php echo url( 'trans' ) ?>"<?php if ( current_route_is( 'home' ) ): ?> class="active"<?php endif ?>><h3>Word Transformer!</h3></a> </li>
             </ul> 
         </div>
 <?php $this->stop() ?>
