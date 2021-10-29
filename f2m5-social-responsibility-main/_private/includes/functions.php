@@ -86,3 +86,78 @@ function current_route_is( $name ) {
 	return false;
 
 }
+
+function validateRegistrationData($data){
+	$error = [];
+		$voornaam = trim ($data['voornaam']);
+		$achternaam = trim ($data['achternaam']);
+        $gebruikersnaam = trim ($data['gebruikersnaam']);
+		$email = filter_var ($data['email'], FILTER_VALIDATE_EMAIL);
+		$wachtwoord = trim ($data['wachtwoord']);
+        $gender = trim ($data['gender']);
+
+        if (empty($voornaam)){
+			$error['voornaam'] = 'geen voornaam ingevult';
+		}
+
+        if (empty($achternaam)){
+			$error['achternaam'] = 'geen achternaam ingevult';
+		}
+        if (empty($gebruikersnaam)){
+			$error['gebruikersnaam'] = 'geen gebruikersnaam ingevult';
+		}
+
+		if ($email === false) {
+			$error['email'] = 'geen geldig email ingevult';
+		}
+
+		if (empty($wachtwoord) || strlen($wachtwoord) < 6 ){
+			$error['wachtwoord'] = 'geen geldig wachtwoord ingevult, moet teminste 6 tekens bevatten';
+		}
+
+        if (empty($gender)){
+            $error['gender'] = 'dit veld is verplicht';
+        }
+
+		$data = [
+			'voornaam' => $voornaam,
+			'achternaam' => $achternaam,
+			'gebruikersnaam' => $gebruikersnaam,
+			'email' => $email,
+			'wachtwoord' => $wachtwoord,
+			'gender' => $gender
+		];
+
+		return [
+			'data' => $data,
+			'error' => $error
+		];
+
+
+		
+}
+
+function userNotRegisterd($email){
+			$connection = dbConnect();
+			$sql = "SELECT * FROM `gebruikers` WHERE `email` = :email";
+			$statement = $connection->prepare($sql);
+			$statement->execute(['email'=>$email]);
+
+			return ($statement->rowCount() === 0);
+}
+
+function createUser($voornaam, $achternaam, $gebruikersnaam, $email, $wachtwoord, $gender){
+				$connection = dbConnect();
+				$sql = "INSERT INTO `gebruikers` (`voornaam`,`achternaam`, `gebruikersnaam` , `email`, `wachtwoord`,`gender`) VALUES (:voornaam, :achternaam, :gebruikersnaam, :email, :wachtwoord, :gender)";
+				$statement = $connection->prepare($sql);
+				$safe_password = password_hash($wachtwoord, PASSWORD_DEFAULT);
+				$params =[
+					'voornaam' => $voornaam,
+					'achternaam' => $achternaam,
+                    'gebruikersnaam' => $gebruikersnaam,
+					'email' => $email,
+					'wachtwoord' => $safe_password,
+                    'gender' => $gender
+				];
+				$statement->execute($params);
+}

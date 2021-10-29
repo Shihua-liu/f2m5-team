@@ -26,7 +26,7 @@
         
     <body>
         <header class="header">
-            <?php echo $this->section('nav') ?>
+            <?php echo $this->fetch('nav') ?>
         </header>
         <div class="login">
             <?php echo $this->section('logbutt') ?>
@@ -37,7 +37,7 @@
         </div>
 
         <div class="footer">
-            <?php echo $this->section('footer') ?>
+            <?php echo $this->fetch('footer') ?>
         </div>
         
     </body>

@@ -22,8 +22,8 @@
         <?php echo $this->section('logbutt'); ?>
     </div>
 
-    <div class="transformer-worden">
-        <?php echo $this->section('word-transformer'); ?>
+    <div class="login-form">
+        <?php echo $this->section('content'); ?>
     </div>
 
     <div class="footer">
