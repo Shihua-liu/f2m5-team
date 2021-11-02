@@ -19,7 +19,7 @@
     </header>
         
     <div class="login">
-        <?php echo $this->section( 'logbutt' ) ?>
+        <?php echo $this->fetch( 'logbutt' ) ?>
     </div>
       
     

@@ -161,3 +161,38 @@ function createUser($voornaam, $achternaam, $gebruikersnaam, $email, $wachtwoord
 				];
 				$statement->execute($params);
 }
+
+function loginUser($user){
+	$_SESSION['user_id'] = $user['id'];
+}
+
+function logoutUser(){
+	unset($_SESSION['user_id']);
+}
+
+function isloggedIn(){
+	return ! empty($_SESSION['user_id']);
+}
+
+function loginCheck(){
+	if ( ! isloggedIn()){
+		$login_url = url('login');
+		redirect($login_url);
+	}
+}
+
+function getLoggedInUserEmail(){
+	$email = "niet ingelogged";
+	
+	if(!isloggedIn()){
+		return $email;
+	}
+	$user_id = $_SESSION['user_id'];
+	$user = getUserById($user_id);
+
+	if($user){
+		$email = $user['email'];
+	}
+
+	return $email;
+}

@@ -21,6 +21,37 @@ class WebsiteLoginController{
 	}
 	public function loginprocess() {
         $result = validateRegistrationData($_POST);
+
+		if(userNotRegisterd($result['data']['email'])){
+			$result['error']['email'] ='deze gebruiker is niet bekend';
+		} else {
+			$user = getUserByEmail($result['data']['email']);
+
+
+			if(password_verify($result['data']['wachtwoord'], $user['wachtwoord'])){
+				loginUser($user);
+
+				redirect(url('login.dashboard'));
+			}else{
+				$result['error']['wachtwoord'] ='wachtwoord is niet correct';
+			}
+		}
+
+
+		$template_engine = get_template_engine();
+		echo $template_engine->render('login', ['error' => $result['error']]);
+	}
+	public function userDashboard(){
+		loginCheck();
+
+		$template_engine = get_template_engine();
+		echo $template_engine->render('user_dashboard');
+	}
+
+	public function logout(){
+		logoutUser();
+		redirect(url('home'));
 	}
 
 }
+

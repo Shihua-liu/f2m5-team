@@ -18,7 +18,7 @@
         <?php echo $this->fetch( 'nav' ) ?>
     </header>
     <div class="login">
-        <?php echo $this->section( 'logbutt' ) ?>
+        <?php echo $this->fetch( 'logbutt' ) ?>
     </div>
 
     <div class="contact" data-aos="fade-right" data-aos-duration="1500">
