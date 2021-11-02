@@ -20,8 +20,13 @@ body{
     padding: 0;
     overflow-x: hidden;
     height: auto;
-    background: white;
-    /* background: linear-gradient(to left, #D94708,#FE9060 , #D94708 ); */
+
+    background-image: url(../foto/background.jpg) ;
+    background-size:cover;
+    -ms-background-size: cover;   
+    -o-background-size: cover;   
+    -moz-background-size: cover;   
+    -webkit-background-size: cover;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -317,7 +322,7 @@ button:hover {
   } */
         
 .section1{
-    background: white;
+
     /* background: linear-gradient(to left,#D94708, #FE9060, #D94708); */
     height: 80vh;
     display: flex;
@@ -606,7 +611,6 @@ i{
 .swiper-slide {
     text-align: left;
     font-size: 18px;
-    background: #fff;
 /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
@@ -621,7 +625,7 @@ i{
     -webkit-align-items: center;
     align-items: center;
     
-    background: white;    
+  
     width: 100%;
     background-size: 10%;
     justify-content: space-around;
