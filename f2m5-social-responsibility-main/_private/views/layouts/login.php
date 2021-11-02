@@ -19,7 +19,7 @@
         <?php echo $this->fetch('nav'); ?>
     </header>
     <div class="login">
-        <?php echo $this->section('logbutt'); ?>
+        <?php echo $this->fetch('logbutt'); ?>
     </div>
 
     <div class="login-form">

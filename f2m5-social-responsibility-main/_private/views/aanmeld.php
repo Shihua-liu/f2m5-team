@@ -1,10 +1,5 @@
 <?php $this->layout('layouts::aanmeld'); ?>
 
-<?php $this->start('logbutt')?>
-    <a href="<?php echo url( 'aanmeld' ) ?>"<?php if ( current_route_is( 'home' ) ): ?> class="active"<?php endif ?>><button>Aanmelden</button></a>
-        <a href="<?php echo url( 'login' ) ?>"<?php if ( current_route_is( 'home' ) ): ?> class="active"<?php endif ?>><button>inloggen</button></a>
-<?php $this->stop()?>
-
 
 <?php $this->start('formulier') ?>
 

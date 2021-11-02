@@ -1,16 +1,6 @@
 <?php $this->layout('layouts::over-ons'); ?>
 
 
-<!-- Dit is de navigatie -->
-
-
-
-<!-- Dit zijn de login buttons -->
-<?php $this->start('logbutt')?>
-    <a href="<?php echo url( 'aanmeld' ) ?>"<?php if ( current_route_is( 'home' ) ): ?> class="active"<?php endif ?>><button>Aanmelden</button></a>
-        <a href="<?php echo url( 'login' ) ?>"<?php if ( current_route_is( 'home' ) ): ?> class="active"<?php endif ?>><button>inloggen</button></a>
-<?php $this->stop()?>
-
 
 
 <?php $this->start('over-ons')?>
@@ -57,21 +47,21 @@
             </div>
             <div class="swiper-slide">
                 <div class="profiel-div">
-                    <img src="/images/elwin.png" alt="">
+                    <img src="/images/Mariam.jpg" alt="">
                     <h4>Mariam Badou</h4>
                     <h5>bestuurslid</h5>
                 </div>
             </div>
             <div class="swiper-slide">
                 <div class="profiel-div">
-                    <img src="/images/elwin.png" alt="">
+                    <img src="/images/Amzah.jpg" alt="">
                     <h4>Amzah Moelah</h4>
                     <h5>bestuurslid</h5>
                 </div>
             </div>
             <div class="swiper-slide">
                 <div class="profiel-div">
-                    <img src="/images/elwin.png" alt="">
+                    <img src="/images/Annebregt.jpg" alt="">
                     <h4>Annebregt Dijkman</h4>
                     <h5>bestuurslid</h5>
                 </div>

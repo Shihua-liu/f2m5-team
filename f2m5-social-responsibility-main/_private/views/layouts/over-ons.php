@@ -23,7 +23,7 @@ height: 100%;">
     </header>
 
     <div class="login">
-        <?php echo $this->section('logbutt'); ?>
+        <?php echo $this->fetch('logbutt'); ?>
     </div>
 
     <div class="over-ons">
