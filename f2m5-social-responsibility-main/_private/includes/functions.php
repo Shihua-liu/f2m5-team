@@ -137,6 +137,40 @@ function validateRegistrationData($data){
 		
 }
 
+
+function validateBlogData($data){
+	$error = [];
+		$titel = trim ($data['Titel']);
+		$subtitel = trim ($data['Subtitel']);
+        $tekst = trim ($data['Tekst']);
+
+        if (empty($titel)) {
+			$error['Titel'] = 'Vul een titel in';
+		}
+        if (empty($subtitel)) {
+			$error['Subtitel'] = 'Vul een subtitel in';
+		}
+		if (empty($tekst)) {
+			$error['Tekst'] = 'Vul een tekst in';
+		}
+		
+
+		$data = [
+			'Titel' => $titel,
+			'Subtitel' => $subtitel,
+			'Tekst' => $tekst,
+			
+		];
+
+		return [
+			'data' => $data,
+			'error' => $error
+		];
+
+		
+}
+
+
 function userNotRegisterd($email){
 			$connection = dbConnect();
 			$sql = "SELECT * FROM `gebruikers` WHERE `email` = :email";
@@ -176,7 +210,7 @@ function isloggedIn(){
 
 function loginCheck(){
 	if ( ! isloggedIn()){
-		$login_url = url('login');
+		$login_url = url('login/login');
 		redirect($login_url);
 	}
 }
