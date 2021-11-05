@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,22 +17,19 @@
 </head>
 <body>
     <header class="header">
-        <?php echo $this->fetch( 'nav' ) ?>
+        <?php echo $this->fetch( 'content/nav' ) ?>
     </header>
     
     <div class="login">
-        <?php echo $this->section( 'logbutt' ) ?>
+        <?php echo $this->section( 'blog' ) ?>
     </div>
 
-    <div class="blog-con">
-        <?php echo $this->section('create') ?>
-        <div class="blogs">
-            <?php echo $this->section('blogs') ?>
-        </div>
+    <div class="template-con">
+        <?php echo $this->section('title') ?>
     </div>
 
     <div class="footer">
-        <?php echo $this->section( 'footer' ) ?>
+        <?php echo $this->fetch( 'content/footer' ) ?>
     </div>
 
 </body>
