@@ -678,6 +678,7 @@ i{
 .form-group > input{
     width: 250px;
     background: transparent;
+    background-color: transparent;
     border: none;
     outline: none;
     border-bottom: 2px solid #ff5722;
