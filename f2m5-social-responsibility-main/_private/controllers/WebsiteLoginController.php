@@ -17,7 +17,7 @@ class WebsiteLoginController{
 
 	public function login() {
         $template_engine = get_template_engine();
-		echo $template_engine->render('login');
+		echo $template_engine->render('login/login');
 	}
 	public function loginprocess() {
         $result = validateRegistrationData($_POST);
@@ -31,7 +31,7 @@ class WebsiteLoginController{
 			if(password_verify($result['data']['wachtwoord'], $user['wachtwoord'])){
 				loginUser($user);
 
-				redirect(url('login.dashboard'));
+				redirect(url('login/user_dashboard'));
 			}else{
 				$result['error']['wachtwoord'] ='wachtwoord is niet correct';
 			}
@@ -39,18 +39,18 @@ class WebsiteLoginController{
 
 
 		$template_engine = get_template_engine();
-		echo $template_engine->render('login', ['error' => $result['error']]);
+		echo $template_engine->render('login/login', ['error' => $result['error']]);
 	}
 	public function userDashboard(){
 		loginCheck();
 
 		$template_engine = get_template_engine();
-		echo $template_engine->render('user_dashboard');
+		echo $template_engine->render('login/user_dashboard');
 	}
 
 	public function logout(){
 		logoutUser();
-		redirect(url('home'));
+		redirect(url('content/home'));
 	}
 
 }
