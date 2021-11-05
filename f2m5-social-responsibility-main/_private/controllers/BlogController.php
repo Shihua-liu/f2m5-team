@@ -19,13 +19,13 @@ class BlogController {
 		$blogs = getAllBlogs();
 
 		$template_engine = get_template_engine();
-		echo $template_engine->render('blog/blog-index', ['blogs' => $blogs]);
+		echo $template_engine->render('blog/blog-index-temp', ['blogs' => $blogs]);
 	}
 
 	public function blog() {
 
 		$template_engine = get_template_engine();
-		echo $template_engine->render('blog/blog');
+		echo $template_engine->render('blog/blog-temp');
 	}
 
     public function save() {
@@ -34,10 +34,10 @@ class BlogController {
 			
 			createBlog($result['data']['Titel'], $result['data']['Subtitel'], $result['data']['Tekst']);
 
-			redirect(url('blog/blog-index'));
+			redirect(url('blog/blog-index-temp'));
 		}
 		$template_engine = get_template_engine();
-		echo $template_engine->render('blog/blog', ['error' => $result['error']]);
+		echo $template_engine->render('blog/blog-temp', ['error' => $result['error']]);
 	}
 
 	

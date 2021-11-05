@@ -735,7 +735,7 @@ form .submit-btn{
 
 /* Menu voor desktop */
 
-@media (min-width:1000px){
+@media (max-width:0px){
     .logo{
         width: 300px;
         /* height: auto; */
