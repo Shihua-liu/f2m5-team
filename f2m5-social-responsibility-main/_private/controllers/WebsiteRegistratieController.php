@@ -27,7 +27,7 @@ class WebsiteRegistratieController{
 				
 				createUser($result['data']['voornaam'], $result['data']['achternaam'], $result['data']['gebruikersnaam'], $result['data']['email'], $result['data']['wachtwoord'], $result['data']['gender']);
 
-				redirect(url("login"));
+				redirect(url("login/login"));
 				exit;
 			} else {
 				$error['email'] = 'email bestaat al';
@@ -35,7 +35,7 @@ class WebsiteRegistratieController{
 			
 		}
 		$template_engine = get_template_engine();
-		echo $template_engine->render('aanmeld' , ['error' => $result['error']]);
+		echo $template_engine->render('login/aanmeld' , ['error' => $result['error']]);
 	}
 
 }

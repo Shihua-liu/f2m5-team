@@ -708,6 +708,30 @@ form .submit-btn{
 }
 
 
+.template-con{
+    height: 40rem;
+    width: 30rem;
+    background-color: rgba(128, 128, 128, 0.637);
+    display: flex;
+    padding: 20px;
+    justify-self: center;
+    align-self: center;
+    flex-direction: column;
+}
+
+.blogs{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-columns: max-content;
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 25px;
+}
+.blog-con > h2{
+    display: flex;
+    justify-content: center;
+}
+
+
 
 /* Menu voor desktop */
 

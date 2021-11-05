@@ -14,30 +14,30 @@ class WebsiteController {
 
 	public function home() {
 		$template_engine = get_template_engine();
-		echo $template_engine->render('homepage');
+		echo $template_engine->render('content/homepage');
 	}
 
 	public function contact() {
 
 		$template_engine = get_template_engine();
-		echo $template_engine->render('contact');
+		echo $template_engine->render('content/contact');
 	}
 
 	public function over() {
 
 		$template_engine = get_template_engine();
-		echo $template_engine->render('over-ons');
+		echo $template_engine->render('content/over-ons');
 	}
 
 	public function trans() {
 
 		$template_engine = get_template_engine();
-		echo $template_engine->render('word-transformer');
+		echo $template_engine->render('content/word-transformer');
 	}
 
 	public function aanmeld() {
 		$template_engine = get_template_engine();
-		echo $template_engine->render('aanmeld');
+		echo $template_engine->render('content/aanmeld');
 	}
 }
 
