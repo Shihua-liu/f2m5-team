@@ -38,4 +38,9 @@ class WebsiteRegistratieController{
 		echo $template_engine->render('login/aanmeld' , ['error' => $result['error']]);
 	}
 
+	public function aanmeld() {
+		$template_engine = get_template_engine();
+		echo $template_engine->render('login/aanmeld');
+	}
+
 }

@@ -16,10 +16,10 @@
     <!-- test voor brach push -->
 <body>
     <header class="header">
-        <?php echo $this->fetch('nav'); ?>
+        <?php echo $this->fetch('content/nav'); ?>
     </header>
     <div class="login">
-        <?php echo $this->fetch('logbutt'); ?>
+        <?php echo $this->fetch('content/logbutt'); ?>
     </div>
 
     <div class="login-form">
@@ -27,7 +27,7 @@
     </div>
 
     <div class="footer">
-        <?php echo $this->fetch('footer'); ?>
+        <?php echo $this->fetch('content/footer'); ?>
     </div>
 </body>
 <script>

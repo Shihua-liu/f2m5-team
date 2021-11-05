@@ -19,11 +19,11 @@
 <body style="position: relative;
 height: 100%;">
     <header class="header">
-        <?php echo $this->fetch('nav'); ?>
+        <?php echo $this->fetch('content/nav'); ?>
     </header>
 
     <div class="login">
-        <?php echo $this->fetch('logbutt'); ?>
+        <?php echo $this->fetch('content/logbutt'); ?>
     </div>
 
     <div class="over-ons">
@@ -36,7 +36,7 @@ height: 100%;">
 
 
     <div class="footer">
-        <?php echo $this->fetch('footer'); ?>
+        <?php echo $this->fetch('content/footer'); ?>
     </div>
 </body>
 <script>

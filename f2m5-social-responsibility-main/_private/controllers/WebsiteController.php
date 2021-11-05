@@ -35,9 +35,5 @@ class WebsiteController {
 		echo $template_engine->render('content/word-transformer');
 	}
 
-	public function aanmeld() {
-		$template_engine = get_template_engine();
-		echo $template_engine->render('content/aanmeld');
-	}
 }
 
