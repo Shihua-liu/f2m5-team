@@ -3,6 +3,8 @@
 use Pecee\Http\Request;
 use Pecee\SimpleRouter\Exceptions\NotFoundHttpException;
 use Pecee\SimpleRouter\SimpleRouter;
+use Website\Middleware\isAuthenticated;
+use Website\Middleware\IsSuperAdmin;
 
 SimpleRouter::setDefaultNamespace( 'Website\Controllers' );
 
@@ -15,19 +17,39 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	SimpleRouter::get( '/con', 'WebsiteController@contact' )->name( 'con' );
 	SimpleRouter::get( '/over', 'WebsiteController@over' )->name( 'over' );
 	SimpleRouter::get( '/trans', 'WebsiteController@trans' )->name( 'trans' );
-	SimpleRouter::post( '/aanmeld/process', 'WebsiteRegistratieController@registerprocess' )->name( 'aanmeld.process' );
+	
+	
+	SimpleRouter::group(['prefix' => '/login/aanmeld'], function(){
+		SimpleRouter::get( '', 'WebsiteRegistratieController@aanmeld' )->name( 'aanmeld' );
+		SimpleRouter::post( '/process', 'WebsiteRegistratieController@registerprocess' )->name( 'aanmeld.process' );
+	});
 
-	SimpleRouter::get( 'login/aanmeld', 'WebsiteRegistratieController@aanmeld' )->name( 'aanmeld' );
-	SimpleRouter::get( '/login', 'WebsiteLoginController@login' )->name( 'login' );
+	
+	
+
+	
+	SimpleRouter::get( '/login/login', 'WebsiteLoginController@login' )->name( 'login' );
 	SimpleRouter::post( '/login/process', 'WebsiteLoginController@loginprocess' )->name( 'login.handle' );
 	SimpleRouter::get( '/logout', 'WebsiteLoginController@logout' )->name( 'logout' );
 
-	SimpleRouter::get('/ingelogd/dashboard', 'WebsiteLoginController@userdashboard') ->name('login.dashboard');
+	SimpleRouter::get('ingelogd/dashboard', 'WebsiteLoginController@userdashboard') ->name('login.dashboard');
 
+	SimpleRouter::group(['prefix' => '/blog'], function(){
+		SimpleRouter::get( '/blog-index', 'BlogController@index' )->name( 'blog-index' );
+		SimpleRouter::get( '/blog', 'BlogController@blog' )->name( 'blog' );
+		SimpleRouter::post( '/blog', 'BlogController@save' )->name( 'blog.save' );
+	});
+	
+	SimpleRouter::group(['prefix' => '/ingelogd', 'middleware' => isAuthenticated::class], function(){
+		SimpleRouter::get ('', 'SecureController@index')->name('secure.index');
+		
+	});
 
-	SimpleRouter::get( 'blog/blog-index', 'BlogController@index' )->name( 'blog-index' );
-	SimpleRouter::get( 'blog/blog', 'BlogController@blog' )->name( 'blog' );
-	SimpleRouter::post( 'blog/blog', 'BlogController@save' )->name( 'blog.save' );
+	
+	SimpleRouter::group(['prefix' => '/admin', 'middleware' => IsSuperAdmin::class], function(){
+		SimpleRouter::get ('', 'AdminController@index')->name('admin.admin');
+	});
+	
 
 
 

@@ -215,6 +215,15 @@ function loginCheck(){
 	}
 }
 
+function loggedInUser(){
+
+	if (!isloggedIn()){
+		return false;
+	}
+
+	return getUserById($_SESSION['user_id']);
+}
+
 function getLoggedInUserEmail(){
 	$email = "niet ingelogged";
 	

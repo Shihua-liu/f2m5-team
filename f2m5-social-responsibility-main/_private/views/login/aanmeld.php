@@ -6,7 +6,7 @@
 <form action="<?php echo url("aanmeld.process")?>" method="POST">
                 <div class="form-group">
                     <label for="voornaam">voornaam:</label>
-                    <input type="text" name="voornaam" value="<?php echo input('voornaam')?>" class="form-input" id="voornaam" required>
+                    <input type="text" name="voornaam" value="<?php echo input('voornaam')?>" class="form-input" id="voornaam">
                     <?php if (isset($error['voornaam'])):?>
                         <?php echo $error['voornaam']?>
                     <?php endif;?>
@@ -14,7 +14,7 @@
                 <br>
                 <div class="form-group">
                     <label for="achternaam">achternaam:</label>
-                    <input type="text" name="achternaam" value="<?php echo input('achternaam')?>" class="form-input" id="achternaam" required>
+                    <input type="text" name="achternaam" value="<?php echo input('achternaam')?>" class="form-input" id="achternaam">
                     <?php if (isset($error['achternaam'])):?>
                         <?php echo $error['achternaam']?>
                     <?php endif;?>
@@ -22,7 +22,7 @@
                 <br>
                 <div class="form-group">
                     <label for="username">gebruikersnaam:</label>
-                    <input type="text" name="gebruikersnaam" value="<?php echo input('gebruikersnaam')?>" class="form-input" id="gebruikersnaam" required>
+                    <input type="text" name="gebruikersnaam" value="<?php echo input('gebruikersnaam')?>" class="form-input" id="gebruikersnaam">
                     <?php if (isset($error['gebruikersnaam'])):?>
                         <?php echo $error['gebruikersnaam']?>
                     <?php endif;?>
@@ -30,7 +30,7 @@
                 <br>
                 <div class="form-group">
                     <label for="email">email:</label>
-                    <input type="email" name="email" value="<?php echo input('email')?>" class="form-input" id="email" required>
+                    <input type="email" name="email" value="<?php echo input('email')?>" class="form-input" id="email">
                     <?php if (isset($error['email'])):?>
                         <?php echo $error['email']?>
                     <?php endif;?>
@@ -38,7 +38,7 @@
                 <br>
                 <div class="form-group">
                     <label for="wachtwoord">wachtwoord:</label>
-                    <input type="password" name="wachtwoord" value="<?php echo input('wachtwoord')?>" class="form-input" id="wachtwoord" required>
+                    <input type="password" name="wachtwoord" value="<?php echo input('wachtwoord')?>" class="form-input" id="wachtwoord">
                     <?php if (isset($error['wachtwoord'])):?>
                         <?php echo $error['wachtwoord']?>
                     <?php endif;?>

@@ -9,7 +9,7 @@
 <?php $this->start('title')?>
 <h1>Nieuw topic</h1>
 
-<form action="<?php echo url('blog/blog.save')?>" method="POST">
+<form action="<?php echo url('blog.save')?>" method="POST">
     
     <div class="form-group">
         <label for="Titel">Titel</label>
@@ -38,7 +38,7 @@
         <?php endif; ?>
     </div>
 
-    <button type="submit">Opslaan</button>
+    <a href=""><button type="submit">Opslaan</button></a>
 </form>
  
 <hr>

@@ -31,7 +31,7 @@ class WebsiteLoginController{
 			if(password_verify($result['data']['wachtwoord'], $user['wachtwoord'])){
 				loginUser($user);
 
-				redirect(url('login/user_dashboard'));
+				redirect(url('blog-index'));
 			}else{
 				$result['error']['wachtwoord'] ='wachtwoord is niet correct';
 			}
@@ -45,12 +45,12 @@ class WebsiteLoginController{
 		loginCheck();
 
 		$template_engine = get_template_engine();
-		echo $template_engine->render('login/user_dashboard');
+		echo $template_engine->render('blog');
 	}
 
 	public function logout(){
 		logoutUser();
-		redirect(url('content/home'));
+		redirect(url('home'));
 	}
 
 }
