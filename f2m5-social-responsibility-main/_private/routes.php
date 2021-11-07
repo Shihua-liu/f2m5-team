@@ -25,11 +25,15 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	});
 
 	
-	
+	SimpleRouter::group(['prefix' => '/login'], function(){
+	SimpleRouter::get( '/login', 'WebsiteLoginController@login' )->name( 'login' );
+	SimpleRouter::post( '/process', 'WebsiteLoginController@loginprocess' )->name( 'login.handle' );
+	});
 
 	
-	SimpleRouter::get( '/login/login', 'WebsiteLoginController@login' )->name( 'login' );
-	SimpleRouter::post( '/login/process', 'WebsiteLoginController@loginprocess' )->name( 'login.handle' );
+	
+
+
 	SimpleRouter::get( '/logout', 'WebsiteLoginController@logout' )->name( 'logout' );
 
 	SimpleRouter::get('ingelogd/dashboard', 'WebsiteLoginController@userdashboard') ->name('login.dashboard');
@@ -47,7 +51,7 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 
 	
 	SimpleRouter::group(['prefix' => '/admin', 'middleware' => IsSuperAdmin::class], function(){
-		SimpleRouter::get ('', 'AdminController@index')->name('admin.admin');
+		SimpleRouter::get ('', 'AdminController@index')->name('admin.index');
 	});
 	
 

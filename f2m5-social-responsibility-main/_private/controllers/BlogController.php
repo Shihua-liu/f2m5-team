@@ -29,7 +29,6 @@ class BlogController {
 	}
 
     public function save() {
-		echo "hallo";
 
 		$result = validateBlogData($_POST);
 		if (count ($result['error']) === 0 ){

@@ -31,7 +31,7 @@ class WebsiteLoginController{
 			if(password_verify($result['data']['wachtwoord'], $user['wachtwoord'])){
 				loginUser($user);
 
-				redirect(url('blog-index'));
+				redirect(url('home'));
 			}else{
 				$result['error']['wachtwoord'] ='wachtwoord is niet correct';
 			}
