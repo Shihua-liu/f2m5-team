@@ -13,7 +13,7 @@
         <div class="footer-navigatie">
             <ul class="footer-menu">
             <li> <a href="<?php echo url( 'home' ) ?>"<?php if ( current_route_is( 'home' ) ): ?> class="active"<?php endif ?>><h3 class="current">Home</h3></a> </li>
-                <li> <a href="<?php echo url( 'con' ) ?>"<?php if ( current_route_is( 'home' ) ): ?> class="active"<?php endif ?>><h3>contact</h3></a> </li>
+                <li> <a href="<?php echo url( 'con' ) ?>"<?php if ( current_route_is( 'home' ) ): ?> class="active"<?php endif ?>><h3>Contact</h3></a> </li>
                 <li> <a href="<?php echo url( 'over' ) ?>"<?php if ( current_route_is( 'home' ) ): ?> class="active"<?php endif ?>><h3>Over-ons</h3></a> </li>
                 <li> <a href="<?php echo url( 'trans' ) ?>"<?php if ( current_route_is( 'home' ) ): ?> class="active"<?php endif ?>><h3>Word Transformer!</h3></a> </li>
             </ul> 

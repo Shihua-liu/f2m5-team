@@ -27,7 +27,7 @@ class WebsiteRegistratieController{
 				
 				createUser($result['data']['voornaam'], $result['data']['achternaam'], $result['data']['gebruikersnaam'], $result['data']['email'], $result['data']['wachtwoord'], $result['data']['gender']);
 
-				redirect(url("login/login"));
+				redirect(url("login"));
 				exit;
 			} else {
 				$error['email'] = 'email bestaat al';
