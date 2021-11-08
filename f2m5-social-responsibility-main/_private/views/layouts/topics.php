@@ -14,27 +14,23 @@
 </head>
 <!-- test -->
 <body>
+    <header class="header">
+        <?php echo $this->fetch( 'content/nav' ) ?>
+    </header>
         
-    <body>
-        <header class="header">
-            <?php echo $this->fetch('content/nav') ?>
-        </header>
-        <div class="login">
-            <?php echo $this->fetch('content/logbutt') ?>
-        </div>
+    <div class="login">
+        <?php echo $this->fetch( 'content/logbutt' ) ?>
+    </div>
     
-        <div class="formulier">
-            <?php echo $this->section('formulier') ?>
-        </div>
-
-        <div class="footer">
-            <?php echo $this->fetch('content/footer') ?>
-        </div>
-        
-    </body>
-    </html>
+    <div class="topic">
+        <?php echo $this->section( 'topics' ) ?>
+    </div>
+    <div class="footer">
+        <?php echo $this->fetch( 'content/footer' ) ?>
+    </div>
 </body>
 <script>
     AOS.init();
 </script>
+
 </html>

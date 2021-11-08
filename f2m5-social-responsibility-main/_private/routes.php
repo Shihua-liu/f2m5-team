@@ -52,6 +52,14 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	
 	SimpleRouter::group(['prefix' => '/admin', 'middleware' => IsSuperAdmin::class], function(){
 		SimpleRouter::get ('', 'AdminController@index')->name('admin.index');
+
+		SimpleRouter::group(['prefix' => '/topics'], function(){
+			SimpleRouter::get ('', 'TopicController@index')->name('Topics.index');
+			SimpleRouter::get ('/new', 'TopicController@new')->name('Topics.new');
+			SimpleRouter::post ('/new', 'TopicController@save')->name('Topics.save');
+			SimpleRouter::get ('/page', 'TopicController@page')->name('Topics.page');
+		});
+
 	});
 	
 
