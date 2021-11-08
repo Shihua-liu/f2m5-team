@@ -15,13 +15,15 @@
 </head>
     <!-- test voor brach push -->
 <body>
-    <header class="header">
-        <?php echo $this->fetch('content/nav'); ?>
-    </header>
-    <div class="login">
-        <?php echo $this->fetch('content/logbutt'); ?>
+    <div class="head-con">
+        <header class="header">
+            <?php echo $this->fetch('content/nav'); ?>
+        </header>
+        <div class="login">
+            <?php echo $this->fetch('content/logbutt'); ?>
+        </div>
     </div>
-
+    
     <div class="transformer-worden">
         <?php echo $this->section('word-transformer'); ?>
     </div>

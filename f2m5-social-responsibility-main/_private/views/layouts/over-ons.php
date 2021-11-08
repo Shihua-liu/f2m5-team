@@ -18,14 +18,15 @@
     
 <body style="position: relative;
 height: 100%;">
-    <header class="header">
-        <?php echo $this->fetch('content/nav'); ?>
-    </header>
-
-    <div class="login">
-        <?php echo $this->fetch('content/logbutt'); ?>
+    <div class="head-con">
+        <header class="header">
+            <?php echo $this->fetch('content/nav'); ?>
+        </header>
+        <div class="login">
+            <?php echo $this->fetch('content/logbutt'); ?>
+        </div>
     </div>
-
+    
     <div class="over-ons">
         <?php echo $this->section('over-ons'); ?>
     </div>
