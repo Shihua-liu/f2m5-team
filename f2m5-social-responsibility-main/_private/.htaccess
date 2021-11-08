@@ -1,5 +1,14 @@
-# Dit .htaccess bestand geeft instructies aan de webserver
-# Het zorgt er voor dat de webserver directe toegang tot deze map nooit toestaat
-# Zo voorkom je dat mensen door je bestanden kunnen bladeren en gevoelige informatie kunnen zien (zoals je database wachtwoord)
-Order allow,deny
-Deny from all
+# Dit bestand zorgt ervoor dat de website ALLE requests doorstuurt naar de front controller
+# Zo handelen we alles op één plek af.
+#
+# Met uitzondering van bestanden die wel echt bestaan
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+# RewriteBase /
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-l
+RewriteRule ^(.*)$ index.php/$1
+</IfModule>
+   

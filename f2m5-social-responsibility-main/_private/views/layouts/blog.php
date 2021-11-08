@@ -26,10 +26,8 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="template-con">
-            <?php echo $this->section('title') ?>
-        </div>
+    <div class="template-con">
+        <?php echo $this->section('title') ?>
     </div>
     
     <div class="footer">
