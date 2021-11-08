@@ -16,20 +16,22 @@
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 </head>
 <body>
-    <header class="header">
-        <?php echo $this->fetch( 'content/nav' ) ?>
-    </header>
-    <div class="login">
-        <?php echo $this->fetch( 'content/logbutt' ) ?>
-    </div>
-    <div class="blog">
-        <?php echo $this->section( 'blog' ) ?>
+
+    <div class="head-con">
+        <header class="header">
+            <?php echo $this->fetch( 'content/nav' ) ?>
+        </header>
+        <div class="login">
+            <?php echo $this->fetch( 'content/logbutt' ) ?>
+        </div>
     </div>
 
-    <div class="template-con">
-        <?php echo $this->section('title') ?>
+    <div class="container">
+        <div class="template-con">
+            <?php echo $this->section('title') ?>
+        </div>
     </div>
-
+    
     <div class="footer">
         <?php echo $this->fetch( 'content/footer' ) ?>
     </div>

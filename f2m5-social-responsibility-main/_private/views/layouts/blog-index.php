@@ -15,14 +15,16 @@
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 </head>
 <body>
-    <header class="header">
-        <?php echo $this->fetch( 'content/nav' ) ?>
-    </header>
-    
-    <div class="login">
-        <?php echo $this->fetch( 'content/logbutt' ) ?>
+    <div class="head-con">
+        <header class="header">
+            <?php echo $this->fetch( 'content/nav' ) ?>
+        </header>
+        
+        <div class="login">
+            <?php echo $this->fetch( 'content/logbutt' ) ?>
+        </div>
     </div>
-
+    
     <div class="blog-con">
         <?php echo $this->section('create') ?>
         <div class="blogs">

@@ -14,14 +14,14 @@
 </head>
 <!-- test -->
 <body>
-    <header class="header">
-        <?php echo $this->fetch( 'content/nav' ) ?>
-    </header>
-        
-    <div class="login">
-        <?php echo $this->fetch( 'content/logbutt' ) ?>
-    </div>
-      
+    <div class="head-con">
+        <header class="header">
+            <?php echo $this->fetch( 'content/nav' ) ?>
+        </header>  
+        <div class="login">
+            <?php echo $this->fetch( 'content/logbutt' ) ?>
+        </div>
+    </div> 
     
 <!-- hier zit de fotoslider en slogun -->
     <div class="section1">
