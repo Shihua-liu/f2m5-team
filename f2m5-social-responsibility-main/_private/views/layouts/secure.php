@@ -15,13 +15,15 @@
 <!-- test -->
 <body>
 <div class="head-con">
-            <header class="header">
-                <?php echo $this->fetch('content/nav') ?>
+
+           <header class="header">
+               <?php echo $this->fetch('content/nav') ?>
             </header>
             <div class="login">
                 <?php echo $this->fetch('content/logbutt') ?>
             </div>
         </div>
+
     
     <div class="secure">
         <?php echo $this->section( 'secure-info' ) ?>
