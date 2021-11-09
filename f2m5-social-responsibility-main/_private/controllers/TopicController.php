@@ -26,7 +26,7 @@ class TopicController {
 	public function save() {
 		
 		$result = validateTopicData($_POST);
-		if ( count($result['errors']) === 0){
+		if ( count($result['error']) === 0){
 			createTopic($result['data']['titel'], $result['data']['desc']);
 			redirect(url('Topics.index'));
 		}
