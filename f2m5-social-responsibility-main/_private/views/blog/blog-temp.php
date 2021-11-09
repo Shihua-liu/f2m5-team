@@ -1,15 +1,9 @@
 <?php $this->layout('layouts::blog');?>
 
-<?php $this->start('logbutt')?>
-    <button>aanmelden</button>
-    <button>login</button>
-<?php $this->stop()?>
-
-
 <?php $this->start('title')?>
-<h1>Nieuw topic</h1>
+<h1>Nieuw Blog</h1>
 
-<form action="<?php echo url('blog/blog.save')?>" method="POST">
+<form action="<?php echo url('blog.save')?>" method="POST">
     
     <div class="form-group">
         <label for="Titel">Titel</label>
@@ -38,7 +32,7 @@
         <?php endif; ?>
     </div>
 
-    <button type="submit">Opslaan</button>
+    <a href=""><button type="submit">Opslaan</button></a>
 </form>
  
 <hr>

@@ -38,6 +38,23 @@ function getUserById($id) {
 	
 }
 
+function getAllTopics() {
+	$connection = dbConnect();
+	$sql 		= "SELECT * FROM `topic` ORDER BY `Titel` ASC";
+	$statement  = $connection->query( $sql );
+
+	return $statement->fetchAll();
+}
+
+function getAllTopicsDescription(){
+	$connection = dbConnect();
+	$sql 		= "SELECT * FROM `topic` ORDER BY `description` ASC";
+	$statement  = $connection->query( $sql );
+
+	return $statement->fetchAll();
+}
+
+
 
 function getAllBlogs() {
 	$connection = dbConnect();
@@ -58,3 +75,15 @@ function createBlog($titel, $subtitel, $tekst){
 	];
 	$statement->execute($params);
 }
+
+function createTopic($titel, $desc){
+	$connection = dbConnect();
+	$sql = "INSERT INTO `topic` (`Titel`, `description`) VALUES (:Titel, :description)";
+	$statement = $connection->prepare($sql);
+	$params =[
+		'Titel' => $titel,
+		'description' => $desc
+	];
+	$statement->execute($params);
+}
+

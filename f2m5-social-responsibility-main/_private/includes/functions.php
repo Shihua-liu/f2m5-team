@@ -137,6 +137,34 @@ function validateRegistrationData($data){
 		
 }
 
+function validateTopicData($data){
+	$error = [];
+		$titel = trim ($data['titel']);
+		$desc = trim ($data['desc']);
+
+		if (empty($titel)){
+			$error['titel'] = 'Vul een titel in';
+		}
+
+        if (empty($desc)){
+            $error['desc'] = 'vul wat tekst toe';
+        }
+
+		$data = [
+			'titel' => $titel,
+			'desc' => $desc,
+			
+		];
+
+		return [
+			'data' => $data,
+			'error' => $error
+		];
+
+
+		
+}
+
 
 function validateBlogData($data){
 	$error = [];
@@ -213,6 +241,15 @@ function loginCheck(){
 		$login_url = url('login/login');
 		redirect($login_url);
 	}
+}
+
+function loggedInUser(){
+
+	if (!isloggedIn()){
+		return false;
+	}
+
+	return getUserById($_SESSION['user_id']);
 }
 
 function getLoggedInUserEmail(){

@@ -29,12 +29,13 @@ class BlogController {
 	}
 
     public function save() {
+
 		$result = validateBlogData($_POST);
 		if (count ($result['error']) === 0 ){
 			
 			createBlog($result['data']['Titel'], $result['data']['Subtitel'], $result['data']['Tekst']);
 
-			redirect(url('blog/blog-index-temp'));
+			redirect(url('blog-index'));
 		}
 		$template_engine = get_template_engine();
 		echo $template_engine->render('blog/blog-temp', ['error' => $result['error']]);
