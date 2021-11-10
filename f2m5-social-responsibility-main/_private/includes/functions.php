@@ -115,9 +115,7 @@ function validateRegistrationData($data){
 			$error['wachtwoord'] = 'geen geldig wachtwoord ingevult, moet teminste 6 tekens bevatten';
 		}
 
-        if (empty($gender)){
-            $error['gender'] = 'dit veld is verplicht';
-        }
+        
 
 		$data = [
 			'voornaam' => $voornaam,
