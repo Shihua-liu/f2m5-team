@@ -83,6 +83,7 @@ body{
     color: white;
 }
 
+
 .head-con > .login > .login_section{
     display: flex;
     flex-direction: row;
@@ -96,6 +97,7 @@ body{
 .login_section > span{
     margin: 15px;
 }
+
 
 body >  div > button{
     font-family: DNpro;
@@ -146,7 +148,7 @@ body > .head-con > div > a > button{
     padding: 5px;
 }
 
-button:hover {
+body > .head-con > div > a > button:hover {
     background: rgb(12, 87, 185);
     border-left:  solid #045292 ;
     border-top:  solid #0d6dbb ;
@@ -736,6 +738,27 @@ form .submit-btn{
     margin: 100px 0px;
 }
 
+.blog-con > h2 > a{
+    color: rgb(204, 136, 8);
+    border-radius: 5px;
+    border: 2px solid orange;
+    background-color: white;
+    padding: 10px 50px;
+    text-decoration: none;
+    box-shadow: 0 10px 11px rgb(110, 110, 110);
+}
+
+.blog-con > h2 > a:hover{
+    transform: scale(0.95);
+    color: rgb(204, 136, 8);
+    border-radius: 5px;
+    border: 2px solid rgb(119, 79, 5);
+    background-color: rgb(221, 221, 221);
+    padding: 10px 50px;
+    text-decoration: none;
+    box-shadow: 0 1px 11px rgb(110, 110, 110);
+}
+
 .blogs{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -752,6 +775,7 @@ form .submit-btn{
 }
 
 .blog{
+    font-size: 24px;
     border-radius: 5px;
     border: 2px solid orange;
     background-color: white;
@@ -762,6 +786,32 @@ form .submit-btn{
     width: 250px;
     justify-content: space-evenly;
     padding-left: 25px;
+    font-weight: bold;
+}
+
+.blog > a{
+    text-decoration: none;
+    border: 2px;
+    color: white;
+    background-color: #0089FA;
+    border-left: solid #055ba1;
+    border-top: solid #0e79d1;
+    border-right: solid #0536a1;
+    border-bottom: solid #03188d;
+    border-radius: 5px;
+    padding: 8px;
+    width: 50% !important;
+    font-size: initial;
+}
+
+.blog > a:hover{
+    transform: scale(0.95);
+    background: rgb(12, 87, 185);
+    border-left:  solid #045292 ;
+    border-top:  solid #0d6dbb ;
+    border-right:  solid #053292 ;
+    border-bottom:  solid #04167a ;
+    cursor: pointer;
 }
 
 .container{
@@ -769,7 +819,52 @@ form .submit-btn{
     height: 100vh;
 }
 
+.blog-content{
+    padding: 25px;
+    display: flex;
+    width: 85%;
+    place-self: center;
+    background: rgba(128, 128, 128, 0.637);
+}
 
+.blog-inhoud{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.blog-inhoud > p{
+    margin: 0;
+}
+
+.blog-inhoud > a{
+    text-decoration: none;
+    border: 2px;
+    color: white;
+    background-color: #0089FA;
+    border-left: solid #055ba1;
+    border-top: solid #0e79d1;
+    border-right: solid #0536a1;
+    border-bottom: solid #03188d;
+    border-radius: 5px;
+    padding: 8px;
+    width: 20%;
+    text-align: center;
+}
+
+.blog-inhoud > a > h2{
+    margin: 5px;
+}
+
+.blog-inhoud > a:hover{
+    transform: scale(0.95);
+    background: rgb(12, 87, 185);
+    border-left:  solid #045292 ;
+    border-top:  solid #0d6dbb ;
+    border-right:  solid #053292 ;
+    border-bottom:  solid #04167a ;
+    cursor: pointer;
+}
 
 /* Menu voor desktop */
 
@@ -837,12 +932,21 @@ form .submit-btn{
         text-align: left;
         white-space: normal;
     }
+
+    .blogs{
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-columns: max-content;
+        grid-auto-rows: minmax(100px, auto);
+        grid-gap: 25px;
+        justify-items: center;
+    }
 }
 
 @media (max-width:349px){
-    .login{
+    .head-con > .login{
         font-family: DNpro;
         flex-direction: column;
+        justify-items: center;
     }
 
     .slogun{
@@ -873,5 +977,13 @@ form .submit-btn{
     .iris > p{
         text-align: left;
         white-space: normal;
+    }
+
+    .blogs{
+        grid-template-columns: repeat(, 1fr);
+        grid-auto-columns: max-content;
+        grid-auto-rows: minmax(100px, auto);
+        grid-gap: 25px;
+        justify-items: center;
     }
 }
