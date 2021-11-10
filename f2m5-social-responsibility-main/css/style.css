@@ -655,23 +655,71 @@ i{
     object-fit: cover;
 }
 
-.contact{
-    
- 
-}
-
 .tekst-vraag{
+    background: #2D0AF4;
+    color: white;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 10px;
     display: flex;
-    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
-    word-wrap: break-word;      /* IE 5.5-7 */
-    white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
-    white-space: pre-wrap;      /* current browsers */
+    border: solid 3px #0e79d1;
 }
-
-.vraag-mail{
+.mail{
+    background: #2D0AF4;
+    color: white;
+    width: 60%;
+    margin: auto;
+    padding: 10px;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 3px #0e79d1;
 }
+.button {
+    border-radius: 4px;
+    background: #0089FA;
+    color: white;
+    border-left: solid #055ba1;
+    border-top: solid #0e79d1;
+    border-right: solid #0536a1;
+    border-bottom: solid #03188d;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
 
 .formulier{
     display: flex;
