@@ -58,7 +58,7 @@ function getAllTopicsDescription(){
 
 function getAllBlogs() {
 	$connection = dbConnect();
-	$sql 		= "SELECT * FROM `blogs` ORDER BY `Datum` ASC";
+	$sql 		= "SELECT * FROM `blogs` ORDER BY `Datum` DESC";
 	$statement  = $connection->query( $sql );
 
 	return $statement->fetchAll();
