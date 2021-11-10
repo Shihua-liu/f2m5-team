@@ -33,7 +33,7 @@
                 Neem gerust contact met ons op, dat vinden we leuk!<br> 
                 Je kan je mail richten aan Iris, de oprichter.<br>
             </h4>
-            <button href="mailto:info@transformers.community" class="button" ><span>mail</span></button>
+            <a href="mailto:info@transformers.community" class="button" ><span>mail</span></a>
         </div>
     </div>
 <?php $this->stop() ?>

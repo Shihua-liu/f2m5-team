@@ -11,7 +11,7 @@
         <div class="slogun" id="item-section1" data-aos="fade-right" data-aos-duration="3000">
             <h1 >"life <section id="trans">sucks</section><br>sometimes, maar je<br>staat er niet alleen voor"</h1>
             <p>De Transformers Community is er voor jongeren die zelfverzekerd willen zijn en tegenslagen omzetten in kracht.<br><br> We doen dit samen: zo leren we meer en helpen we elkaar om te groeien.</p>
-            <a class="lid" href="./html/contact.html">yes</a>
+            <a class="lid" href="<?php echo url( 'aanmeld' ) ?>"<?php if ( current_route_is( 'home' ) ): ?> class="active"<?php endif ?>">Word lid!</a>
         </div>
 
         <!--image slider start-->
