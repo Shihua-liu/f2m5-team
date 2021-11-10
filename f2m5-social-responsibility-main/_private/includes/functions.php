@@ -187,6 +187,7 @@ function validateBlogData($data){
 			'Titel' 	=> $titel,
 			'Subtitel' 	=> $subtitel,
 			'Tekst' 	=> $tekst,
+			'Datum' => date("m.d.y")
 			
 		];
 

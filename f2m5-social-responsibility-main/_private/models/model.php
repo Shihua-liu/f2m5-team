@@ -58,7 +58,7 @@ function getAllTopicsDescription(){
 
 function getAllBlogs() {
 	$connection = dbConnect();
-	$sql 		= "SELECT * FROM `blogs` ORDER BY `Titel` ASC";
+	$sql 		= "SELECT * FROM `blogs` ORDER BY `Datum` ASC";
 	$statement  = $connection->query( $sql );
 
 	return $statement->fetchAll();
@@ -79,13 +79,14 @@ function getBlogPost($id) {
 
 function createBlog($id, $titel, $subtitel, $tekst){
 	$connection = dbConnect();
-	$sql = "INSERT INTO `blogs` (`id`, `Titel`, `Subtitel`, `Tekst`) VALUES (:id, :Titel, :Subtitel, :Tekst )";
+	$sql = "INSERT INTO `blogs` (`id`, `Titel`, `Subtitel`, `Tekst`, `Datum`) VALUES (:id, :Titel, :Subtitel, :Tekst, :Datum)";
 	$statement = $connection->prepare($sql);
 	$params =[
 		'id'		=> $id,
 		'Titel' 	=> $titel,
 		'Subtitel' 	=> $subtitel,
 		'Tekst' 	=> $tekst,
+		'Datum'     => date("m.d.y")
 	];
 	$statement->execute($params);
 }
