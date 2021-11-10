@@ -33,7 +33,7 @@ class BlogController {
 		$result = validateBlogData($_POST);
 		if (count ($result['error']) === 0 ){
 			
-			createBlog($result['data']['Titel'], $result['data']['Subtitel'], $result['data']['Tekst']);
+			createBlog($result['data']['id'], $result['data']['Titel'], $result['data']['Subtitel'], $result['data']['Tekst']);
 
 			redirect(url('blog-index'));
 		}
@@ -41,5 +41,15 @@ class BlogController {
 		echo $template_engine->render('blog/blog-temp', ['error' => $result['error']]);
 	}
 
+	public function view($id) {
+
+		$blogPost = getBlogPost($id);
+
+		$template_engine = get_template_engine();
+		return $template_engine->render('blog/blog-view', ['blog_post' => $blogPost]);
+
+	}
+
 	
 }
+

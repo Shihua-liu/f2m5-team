@@ -40,8 +40,10 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 
 	SimpleRouter::group(['prefix' => '/blog'], function(){
 		SimpleRouter::get( '/blog-index', 'BlogController@index' )->name( 'blog-index' );
+		SimpleRouter::get( '/blog-index/{id}', 'BlogController@view' ) ->name( 'blog.view' );
 		SimpleRouter::get( '/blog', 'BlogController@blog' )->name( 'blog' );
 		SimpleRouter::post( '/blog', 'BlogController@save' )->name( 'blog.save' );
+		
 	});
 	
 	SimpleRouter::group(['prefix' => '/ingelogd', 'middleware' => isAuthenticated::class], function(){

@@ -167,10 +167,10 @@ function validateTopicData($data){
 
 
 function validateBlogData($data){
-	$error = [];
-		$titel = trim ($data['Titel']);
-		$subtitel = trim ($data['Subtitel']);
-        $tekst = trim ($data['Tekst']);
+	$error = [];		
+		$titel 		= trim ($data['Titel']);
+		$subtitel 	= trim ($data['Subtitel']);
+        $tekst 		= trim ($data['Tekst']);
 
         if (empty($titel)) {
 			$error['Titel'] = 'Vul een titel in';
@@ -184,9 +184,9 @@ function validateBlogData($data){
 		
 
 		$data = [
-			'Titel' => $titel,
-			'Subtitel' => $subtitel,
-			'Tekst' => $tekst,
+			'Titel' 	=> $titel,
+			'Subtitel' 	=> $subtitel,
+			'Tekst' 	=> $tekst,
 			
 		];
 
