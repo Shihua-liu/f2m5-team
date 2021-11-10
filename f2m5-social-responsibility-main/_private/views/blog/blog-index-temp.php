@@ -14,7 +14,7 @@
 <?php $this->start('blogs') ?>
     <?php foreach($blogs as $blog): ?>
         <div class="blog">
-            <?php echo $blog['Titel'] ?> <a href="">Edit</a>
+            <?php echo $blog['Titel'] ?> <a href="<?php echo url( 'blog.view', ['id' => $blog['id']] ) ?>"<?php if ( current_route_is( 'home' ) ): ?> class="active"<?php endif ?>">Toon Meer</a>
         </div>
             
     <?php endforeach; ?>

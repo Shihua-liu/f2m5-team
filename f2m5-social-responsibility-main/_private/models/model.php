@@ -64,17 +64,32 @@ function getAllBlogs() {
 	return $statement->fetchAll();
 }
 
-function createBlog($titel, $subtitel, $tekst){
+function getBlogPost($id) {
 	$connection = dbConnect();
-	$sql = "INSERT INTO `blogs` (`Titel`, `Subtitel`, `Tekst`) VALUES (:Titel, :Subtitel, :Tekst )";
+	$sql 		= "SELECT * FROM `blogs` WHERE id = :id";
+	$statement  = $connection->prepare( $sql );
+	$statement->execute(
+		[
+			'id' => $id
+		]
+		);
+
+	return $statement->fetch();
+}
+
+function createBlog($id, $titel, $subtitel, $tekst){
+	$connection = dbConnect();
+	$sql = "INSERT INTO `blogs` (`id`, `Titel`, `Subtitel`, `Tekst`) VALUES (:id, :Titel, :Subtitel, :Tekst )";
 	$statement = $connection->prepare($sql);
 	$params =[
-		'Titel' => $titel,
-		'Subtitel' => $subtitel,
-		'Tekst' => $tekst,
+		'id'		=> $id,
+		'Titel' 	=> $titel,
+		'Subtitel' 	=> $subtitel,
+		'Tekst' 	=> $tekst,
 	];
 	$statement->execute($params);
 }
+
 
 function createTopic($titel, $desc){
 	$connection = dbConnect();
