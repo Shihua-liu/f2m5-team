@@ -14,25 +14,28 @@
 
 
 <?php $this->start( 'con-info' ) ?>
-<div class="tekst-vraag">
-            <h2>
-                Vragen? 
-                Samenwerken? 
-                Iets anders? 
-                Mail ons!
+<div class="contact" data-aos="fade-right" data-aos-duration="1500">
+        <div class="tekst-vraag">
+            <h2>Vragen?<br> 
+                Samenwerken?<br> 
+                Iets anders?<br>
+                Mail ons!<br>
             </h2>
-
+            
             <h4>
-                heb jij een idee of een vraag voor de Transformer Community? 
-                Zou je graag willen samenwerken? 
-                Of ben je gewoon benieuwd wat wij zoal doen? 
-
-                Neem gerust contact met ons op, dat vinden we leuk! 
-                Je kan je mail richten aan Iris, de oprichter.
+                Heb jij een idee of een vraag voor de Transformer Community?<br> 
+                Zou je graag willen samenwerken?<br>
+                Of ben je gewoon benieuwd wat wij zoal doen?<br> 
             </h4>
         </div>
-
-        <button href="mailto:info@transformers.community" class="vraag-mail">Mail ons!</button>
+        <div class="mail">
+            <h4>
+                Neem gerust contact met ons op, dat vinden we leuk!<br> 
+                Je kan je mail richten aan Iris, de oprichter.<br>
+            </h4>
+            <button href="mailto:info@transformers.community" class="button" ><span>mail</span></button>
+        </div>
+    </div>
 <?php $this->stop() ?>
 
 
